@@ -79,7 +79,7 @@ const Profile = () => {
               <View
                 style={{ justifyContent: "center", marginLeft: 10, flex: 1 }}
               >
-                <Text style={{ fontWeight: "bold" }}>0878-8234-0660</Text>
+                <Text style={{ fontWeight: "bold" }}>+6287-xxxx-xxxx</Text>
               </View>
             </View>
             <View
