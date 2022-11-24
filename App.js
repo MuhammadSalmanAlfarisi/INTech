@@ -4,8 +4,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Homescreen from "./screens/Homescreen";
 import Profile from "./screens/Profile";
 import SearchScreen from "./screens/SearchScreen";
-import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import AboutMe from "./screens/AboutMe";
+import DetailScreen from "./screens/DetailScreen";
+import { Ionicons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
 
 const Tab = createBottomTabNavigator();
@@ -15,11 +16,10 @@ export default function App() {
     <NavigationContainer style={styles.container}>
       <StatusBar barStyle={"light-content"} backgroundColor="#f5f5f5" />
       <Tab.Navigator
+        initialRouteName="Home"
         screenOptions={({ route }) => ({
           headerShown: false,
           tabBarShowLabel: false,
-          tabBarInactiveTintColor: "#000",
-          tabBarActiveTintColor: "#00ADB5",
           tabBarStyle: {
             position: "absolute",
             backgroundColor: "white",
@@ -49,6 +49,11 @@ export default function App() {
           tabBarActiveTintColor: "#00ADB5",
         })}
       >
+        <Tab.Screen
+          name="Detail"
+          component={DetailScreen}
+          options={{ tabBarButton: () => null, tabBarVisible: false }}
+        />
         <Tab.Screen name="Home" component={Homescreen} />
         <Tab.Screen name="Search" component={SearchScreen} />
         <Tab.Screen name="Profile" component={Profile} />

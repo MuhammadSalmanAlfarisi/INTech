@@ -1,14 +1,16 @@
+//Dependencies
 import React, { useState, useEffect } from "react";
-import {
-  StyleSheet,
-  SafeAreaView,
-  FlatList,
-} from "react-native";
-import Artikel from "../components/Artikel";
+import { StyleSheet, SafeAreaView, FlatList } from "react-native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import axios from "axios";
+
+//Components
+import Artikel from "../components/Artikel";
+
 
 const Homescreen = () => {
   const [articles, setArticles] = useState([]);
+
   const getArticles = () => {
     axios
       .get(
@@ -45,6 +47,7 @@ const Homescreen = () => {
             publishedAt={item.publishedAt}
             sourceName={item.source.name}
             url={item.url}
+            content={item.content}
           />
         )}
         keyExtractor={(item) => item.title}

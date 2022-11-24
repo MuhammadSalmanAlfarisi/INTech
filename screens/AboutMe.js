@@ -1,3 +1,4 @@
+//Dependencies
 import React from "react";
 import {
   View,
@@ -6,8 +7,10 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import About from "../components/About";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+
+//Components
+import About from "../components/About";
 
 const Tab = createMaterialTopTabNavigator();
 

@@ -2,7 +2,7 @@
   "expo": {
     "name": "INTech",
     "slug": "tugas-akhir-salman",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/Logo.png",
     "userInterfaceStyle": "light",
@@ -24,10 +24,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/Logo.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.salmoon26.tugasakhirsalman"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "93ced902-d495-4153-af7f-7bee729774f6"
+      }
     }
   }
 }

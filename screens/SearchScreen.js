@@ -1,8 +1,11 @@
+//Dependencies
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet, SafeAreaView, FlatList } from "react-native";
+import axios from "axios";
+
+//Components
 import Artikel from "../components/Artikel";
 import Search from "../components/Search";
-import axios from "axios";
 
 const SearchScreen = () => {
   const [searchText, setSearchText] = useState("");

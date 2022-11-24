@@ -1,3 +1,4 @@
+//Dependencies
 import React from "react";
 import { View, StyleSheet, Image, TextInput, SafeAreaView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     backgroundColor: "#f5f5f5",
     borderColor: "#00ADB5",
-    borderRadius: 20,
+    borderRadius: 14,
     borderWidth: 3,
     paddingHorizontal:10,
   },

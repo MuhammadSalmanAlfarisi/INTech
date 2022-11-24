@@ -1,3 +1,4 @@
+//Dependencies
 import React from "react";
 import {
   View,
@@ -7,17 +8,26 @@ import {
   SafeAreaView,
   Pressable,
 } from "react-native";
-import * as WebBrowser from "expo-web-browser";
+import { useNavigation } from "@react-navigation/native";
 import moment from "moment";
 
+
 const Artikel = (props) => {
-  const goToSource = () => {
-    WebBrowser.openBrowserAsync(props.url);
+  const navigation = useNavigation();
+  const goToDetail = (props) => {
+    navigation.navigate("Detail", {
+      image: props.urlToImage,
+      title: props.title,
+      content: props.content,
+      source: props.sourceName,
+      author: props.author,
+      date: moment(props.publishedAt).format("MMM Do YY"),
+    });
   };
 
   return (
     <SafeAreaView style={styles.container}>
-      <Pressable onPress={goToSource}>
+      <Pressable onPress={() => goToDetail(props)}>
         <Image
           style={styles.image}
           on
@@ -26,7 +36,7 @@ const Artikel = (props) => {
           }}
         />
       </Pressable>
-      <View style={{ padding: 20 }}>
+      <View style={{ paddingHorizontal: 20, paddingBottom: 10 }}>
         <Text style={styles.title}>{props.title}</Text>
         <Text style={styles.deskripsi} numberOfLines={3}>
           {props.description}
@@ -60,7 +70,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     backgroundColor: "#fff",
     overflow: "hidden",
-    borderRadius: 50,
+    borderRadius: 24,
     marginTop: 10,
     marginBottom: 10,
   },
@@ -70,12 +80,13 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
+    marginVertical: 8,
     fontWeight: "800",
     color: "#00ADB5",
   },
   deskripsi: {
     fontSize: 16,
-    marginTop: 5,
+    textAlign: "justify",
   },
   data: {
     flexDirection: "row",
