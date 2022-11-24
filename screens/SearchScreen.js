@@ -13,7 +13,7 @@ const SearchScreen = () => {
   const getSearchText = () => {
     axios
       .get(
-        "https://newsapi.org/v2/top-headlines?country=us&apiKey=f5b4db59c8f34b8298f8b2bd2d64e750",
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=API-KEY",
         {
           params: {
             category: "technology",
